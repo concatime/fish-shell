@@ -26,6 +26,10 @@ if not command -sq open
             for i in $argv
                 xdg-open $i
             end
+        else if type -q -f gio
+            for i in $argv
+                gio open $i
+            end
         else
             echo (_ 'No open utility found. Try installing "xdg-open" or "xdg-utils".')
         end
